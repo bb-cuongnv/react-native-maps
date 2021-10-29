@@ -137,11 +137,11 @@
         }
 
         NSData *tile = [NSData dataWithContentsOfFile:[tileCacheFilePath path]];
-        NSLog(@"tileCache HIT for %d_%d_%d", (int)path.z, (int)path.x, (int)path.y);
-        NSLog(@"tileCache HIT, with max age set at %d", self.tileCacheMaxAge);
+        // NSLog(@"tileCache HIT for %d_%d_%d", (int)path.z, (int)path.x, (int)path.y);
+        // NSLog(@"tileCache HIT, with max age set at %d", self.tileCacheMaxAge);
         return tile;
     } else {
-        NSLog(@"tileCache MISS for %d_%d_%d", (int)path.z, (int)path.x, (int)path.y);
+        // NSLog(@"tileCache MISS for %d_%d_%d", (int)path.z, (int)path.x, (int)path.y);
         return nil;
     }
 }
@@ -165,13 +165,13 @@
     if (![[NSFileManager defaultManager] fileExistsAtPath:[tileCacheFileDirectory path]]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:[tileCacheFileDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
         if (error) {
-            NSLog(@"Error: %@", error);
+            // NSLog(@"Error: %@", error);
             return;
         }
     }
 
     [[NSFileManager defaultManager] createFileAtPath:[tileCacheFilePath path] contents:data attributes:nil];
-    NSLog(@"tileCache SAVED tile %@", [tileCacheFilePath path]);
+    // NSLog(@"tileCache SAVED tile %@", [tileCacheFilePath path]);
 }
 
 - (void)createTileCacheDirectory
@@ -207,7 +207,7 @@
                                         NSError *error) {
                     if (!error) {
                         [[NSFileManager defaultManager] createFileAtPath:[tileCacheFilePath path] contents:data attributes:nil];
-                        NSLog(@"tileCache File refreshed at %@", [tileCacheFilePath path]);
+                        // NSLog(@"tileCache File refreshed at %@", [tileCacheFilePath path]);
                     }
                 }] resume];             
             }

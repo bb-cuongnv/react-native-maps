@@ -799,7 +799,7 @@ static UIImage *blackArrowImage = nil, *whiteArrowImage = nil, *grayArrowImage =
     SEL selector = NSSelectorFromString(name);
 
     if (![(id)self respondsToSelector:selector]) {
-        NSLog(@"Could not find an embedded image. Ensure that you've added a class-level method named +%@", name);
+        // NSLog(@"Could not find an embedded image. Ensure that you've added a class-level method named +%@", name);
         return nil;
     }
 

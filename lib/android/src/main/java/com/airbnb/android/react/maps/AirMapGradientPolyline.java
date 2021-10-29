@@ -241,7 +241,7 @@ public class AirMapGradientPolyline extends AirMapFeature {
         float interp2 = ((float)i - 1) / points.size();
         float interp1to2 = (interp1 + interp2) / 2;
 
-        Log.d("AirMapGradientPolyline", String.valueOf(interp1to2));
+        // Log.d("AirMapGradientPolyline", String.valueOf(interp1to2));
 
         // Circle for the corner (removes the weird empty corners that occur otherwise)
         colorPaint.setStyle(Paint.Style.FILL);
@@ -324,7 +324,7 @@ public class AirMapGradientPolyline extends AirMapFeature {
 
   @Override
   public void addToMap(GoogleMap map) {
-    Log.d("AirMapGradientPolyline", "ADDTOMAP");
+    // Log.d("AirMapGradientPolyline", "ADDTOMAP");
     this.map = map;
     this.tileOverlay = map.addTileOverlay(createTileOverlayOptions());
   }

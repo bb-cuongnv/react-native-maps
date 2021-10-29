@@ -102,7 +102,7 @@ public class AirMapHeatmap extends AirMapFeature {
 
     @Override
     public void addToMap(GoogleMap map) {
-        Log.d("AirMapHeatmap", "ADD TO MAP");
+        // Log.d("AirMapHeatmap", "ADD TO MAP");
         heatmap = map.addTileOverlay(getHeatmapOptions());
     }
 

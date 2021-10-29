@@ -19,7 +19,7 @@
 
 - (void)setImageSrc:(NSString *)imageSrc
 {
-    NSLog(@">>> SET IMAGESRC: %@", imageSrc);
+    // NSLog(@">>> SET IMAGESRC: %@", imageSrc);
     _imageSrc = imageSrc;
 
     if (_reloadImageCancellationBlock) {
@@ -35,11 +35,11 @@
                                                                    progressBlock:nil
                                                                 partialLoadBlock:nil
                                                                  completionBlock:^(NSError *error, UIImage *image) {
-                                                                     if (error) {
-                                                                         NSLog(@"%@", error);
-                                                                     }
+                                                                    //  if (error) {
+                                                                    //      NSLog(@"%@", error);
+                                                                    //  }
                                                                      dispatch_async(dispatch_get_main_queue(), ^{
-                                                                         NSLog(@">>> IMAGE: %@", image);
+                                                                        //  NSLog(@">>> IMAGE: %@", image);
                                                                          weakSelf.overlayImage = image;
                                                                          [weakSelf createOverlayRendererIfPossible];
                                                                          [weakSelf update];

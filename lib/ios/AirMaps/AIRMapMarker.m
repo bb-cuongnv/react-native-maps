@@ -322,10 +322,10 @@ NSInteger const AIR_CALLOUT_OPEN_ZINDEX_BASELINE = 999;
                                                                    progressBlock:nil
                                                                 partialLoadBlock:nil
                                                                  completionBlock:^(NSError *error, UIImage *image) {
-                                                                     if (error) {
-                                                                         // TODO(lmr): do something with the error?
-                                                                         NSLog(@"%@", error);
-                                                                     }
+                                                                    //  if (error) {
+                                                                    //      // TODO(lmr): do something with the error?
+                                                                    //      NSLog(@"%@", error);
+                                                                    //  }
                                                                      dispatch_async(dispatch_get_main_queue(), ^{
                                                                          self.image = image;
                                                                      });

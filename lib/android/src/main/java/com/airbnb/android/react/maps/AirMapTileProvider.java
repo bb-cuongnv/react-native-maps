@@ -135,22 +135,22 @@ public class AirMapTileProvider implements TileProvider {
 		int maximumZ = this.maximumZ > 0 ? this.maximumZ : Integer.MAX_VALUE;
 		
 		if (this.tileSize == 256 && this.doubleTileSize && zoom + 1 <= this.maximumNativeZ && zoom + 1 <= maximumZ) {
-      Log.d("urlTile", "pullTilesFromHigherZoom");
+    //   Log.d("urlTile", "pullTilesFromHigherZoom");
 			image = pullTilesFromHigherZoom(x, y, zoom);      
 		} 
 
     if (zoom > this.maximumNativeZ) {
-      Log.d("urlTile", "scaleLowerZoomTile");
+    //   Log.d("urlTile", "scaleLowerZoomTile");
 			image = scaleLowerZoomTile(x, y, zoom, this.maximumNativeZ);
 		}
 
     if (image == null && zoom <= maximumZ) {
-      Log.d("urlTile", "getTileImage");
+    //   Log.d("urlTile", "getTileImage");
 			image = getTileImage(x, y, zoom);
 		}
 
     if (image == null && this.tileCachePath != null && this.offlineMode) {
-      Log.d("urlTile", "findLowerZoomTileForScaling");
+    //   Log.d("urlTile", "findLowerZoomTileForScaling");
       int zoomLevelToStart = (zoom > this.maximumNativeZ) ? this.maximumNativeZ - 1 : zoom - 1; 
       int minimumZoomToSearch = this.minimumZ >= zoom - 3 ? this.minimumZ : zoom - 3;
       for (int tryZoom = zoomLevelToStart; tryZoom >= minimumZoomToSearch; tryZoom--) {
@@ -170,13 +170,13 @@ public class AirMapTileProvider implements TileProvider {
 		
 		if (this.tileCachePath != null) {
 			image = readTileImage(x, y, zoom);
-			if (image != null) {
-				Log.d("urlTile: tile cache HIT for ", Integer.toString(zoom) + 
-					"/" + Integer.toString(x) + "/" + Integer.toString(y));
-			} else {
-				Log.d("urlTile: tile cache MISS for ", Integer.toString(zoom) + 
-        	"/" + Integer.toString(x) + "/" + Integer.toString(y));
-			}
+			// if (image != null) {
+			// 	Log.d("urlTile: tile cache HIT for ", Integer.toString(zoom) + 
+			// 		"/" + Integer.toString(x) + "/" + Integer.toString(y));
+			// } else {
+			// 	Log.d("urlTile: tile cache MISS for ", Integer.toString(zoom) + 
+        	// "/" + Integer.toString(x) + "/" + Integer.toString(y));
+			// }
 			if (image != null && !this.offlineMode) {
 				checkForRefresh(x, y, zoom);
 			}
@@ -208,16 +208,16 @@ public class AirMapTileProvider implements TileProvider {
 					Thread.sleep(500);
 					Future<List<WorkInfo>> fetchFuture = workManager.getWorkInfosByTag(fileName);
 					List<WorkInfo> workInfo = fetchFuture.get(1L, TimeUnit.SECONDS);
-					Log.d("urlTile: ", workInfo.get(0).toString());
+					// Log.d("urlTile: ", workInfo.get(0).toString());
 					if (this.tileCachePath != null) {
 						image = readTileImage(x, y, zoom);
-						if (image != null) {
-							Log.d("urlTile: tile cache fetch HIT for ", Integer.toString(zoom) + 
-								"/" + Integer.toString(x) + "/" + Integer.toString(y));
-						} else {
-								Log.d("urlTile: tile cache fetch MISS for ", Integer.toString(zoom) + 
-									"/" + Integer.toString(x) + "/" + Integer.toString(y));
-						}
+						// if (image != null) {
+						// 	Log.d("urlTile: tile cache fetch HIT for ", Integer.toString(zoom) + 
+						// 		"/" + Integer.toString(x) + "/" + Integer.toString(y));
+						// } else {
+						// 		Log.d("urlTile: tile cache fetch MISS for ", Integer.toString(zoom) + 
+						// 			"/" + Integer.toString(x) + "/" + Integer.toString(y));
+						// }
 					}
 				} catch (Exception e) {
       			e.printStackTrace();
@@ -226,12 +226,12 @@ public class AirMapTileProvider implements TileProvider {
 				fallbackOnSyncFetch = true;
 			}
 		} else if (fallbackOnSyncFetch || (image == null && !this.offlineMode)) {
-			Log.d("urlTile", "Normal fetch");
+			// Log.d("urlTile", "Normal fetch");
 			image = fetchTile(x, y, zoom);
-			if (image == null) {
-				Log.d("urlTile: tile fetch TIMEOUT / FAIL for ", Integer.toString(zoom) + 
-					"/" + Integer.toString(x) + "/" + Integer.toString(y));
-			}
+			// if (image == null) {
+			// 	Log.d("urlTile: tile fetch TIMEOUT / FAIL for ", Integer.toString(zoom) + 
+			// 		"/" + Integer.toString(x) + "/" + Integer.toString(y));
+			// }
 		}
 
 		return image;
@@ -336,7 +336,7 @@ public class AirMapTileProvider implements TileProvider {
 		long now = System.currentTimeMillis();
 
 		if ((now - lastModified) / 1000 > this.tileCacheMaxAge) {
-      Log.d("urlTile", "Refreshing");
+    //   Log.d("urlTile", "Refreshing");
 			Constraints constraints = new Constraints.Builder()
 				.setRequiredNetworkType(NetworkType.CONNECTED)
 				.build();

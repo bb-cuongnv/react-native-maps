@@ -171,7 +171,7 @@ public class AirMapUrlTile extends AirMapFeature {
   }
 
   protected void setCustomTileProviderMode() {
-    Log.d("urlTile ", "creating new mode TileProvider");
+    // Log.d("urlTile ", "creating new mode TileProvider");
     this.customTileProviderNeeded = true;
     if (tileProvider != null) {
       tileProvider.setCustomMode();
@@ -179,7 +179,7 @@ public class AirMapUrlTile extends AirMapFeature {
   } 
 
   protected TileOverlayOptions createTileOverlayOptions() {
-    Log.d("urlTile ", "creating TileProvider");
+    // Log.d("urlTile ", "creating TileProvider");
     TileOverlayOptions options = new TileOverlayOptions();
     options.zIndex(zIndex);
     options.transparency(1 - this.opacity);

@@ -495,9 +495,9 @@ id regionAsJSON(MKCoordinateRegion region) {
 
   GMSMapStyle *style = [GMSMapStyle styleWithJSONString:customMapStyleString error:&error];
 
-  if (!style) {
-    NSLog(@"The style definition could not be loaded: %@", error);
-  }
+  // if (!style) {
+  //   NSLog(@"The style definition could not be loaded: %@", error);
+  // }
 
   self.mapStyle = style;
 }

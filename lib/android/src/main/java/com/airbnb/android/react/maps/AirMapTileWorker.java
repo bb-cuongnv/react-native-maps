@@ -63,7 +63,7 @@ public class AirMapTileWorker extends Worker {
 		}
 
 		// Indicate whether the work finished successfully with the Result
-    Log.d("urlTile", "Worker fetched " + fileName);
+    // Log.d("urlTile", "Worker fetched " + fileName);
 		return Result.success();
 	}
 

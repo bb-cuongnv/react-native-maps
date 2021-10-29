@@ -371,7 +371,7 @@ const NSInteger AIRMapMaxZoomLevel = 20;
             self.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
         }
     } else {
-        NSLog(@"UserInterfaceStyle not supported below iOS 13");
+        // NSLog(@"UserInterfaceStyle not supported below iOS 13");
     }
 }
 

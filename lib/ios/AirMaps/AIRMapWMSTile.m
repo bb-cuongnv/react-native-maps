@@ -15,9 +15,9 @@
 {
     if (!_urlTemplateSet) return;
     if (_tileCachePathSet || _maximumNativeZSet) {
-        NSLog(@"tileCache new overlay dir %@", self.tileCachePath);
-        NSLog(@"tileCache %d", _tileCachePathSet);
-        NSLog(@"tileCache %d", _maximumNativeZSet);
+        // NSLog(@"tileCache new overlay dir %@", self.tileCachePath);
+        // NSLog(@"tileCache %d", _tileCachePathSet);
+        // NSLog(@"tileCache %d", _maximumNativeZSet);
         self.tileOverlay = [[AIRMapWMSTileCachedOverlay alloc] initWithURLTemplate:self.urlTemplate];
         _cachedOverlayCreated = YES;
         if (_tileCachePathSet) {
@@ -34,7 +34,7 @@
             }
         }
     } else {
-        NSLog(@"tileCache normal overlay");
+        // NSLog(@"tileCache normal overlay");
         self.tileOverlay = [[AIRMapWMSTileOverlay alloc] initWithURLTemplate:self.urlTemplate];
         _cachedOverlayCreated = NO;
     }

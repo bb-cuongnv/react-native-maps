@@ -87,8 +87,10 @@ ext {
     buildToolsVersion   = "xxx"
     minSdkVersion       = xxx
     supportLibVersion   = "xxx"
-    playServicesVersion = "17.0.0" // or find latest version
-    androidMapsUtilsVersion = "xxx"
+    androidBaseVersion  = "xxx" // <--- add line: play-service-base version, default 17.0.0
+    androidMapsVersion  = "xxx" // <--- add line: play-service-maps version, default 17.0.0
+    androidLocationVersion  = "xxx" // <--- add line: play-service-location version, default 17.0.0
+    androidMapsUtilsVersion = "xxx" // <--- add line: maps-utils-service version, default 0.5
 }
 ```
 
@@ -102,8 +104,10 @@ buildscript {
         compileSdkVersion = xxx
         targetSdkVersion = xxx
         supportLibVersion = "xxx"
-        playServicesVersion = "17.0.0" // or find latest version
-        androidMapsUtilsVersion = "xxx"
+        androidBaseVersion = "xxx" // <--- add line: play-service-base version, default 17.0.0
+        androidMapsVersion = "xxx" // <--- add line: play-service-maps version, default 17.0.0
+        androidLocationVersion = "xxx" // <--- add line: play-service-location version,  default 17.0.0
+        androidMapsUtilsVersion = "xxx" // <--- add line: maps-utils-service version, default 0.5
     }
 }
 ...

@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.summary      = "React Native Mapview component for iOS + Android (fork by bbcuongnv)"
 
   s.authors      = { "bbcuongnv" => "vancuonggid@gmail.com" }
-  s.homepage     = "https://github.com/react-native-maps/react-native-maps#readme"
+  s.homepage     = "https://github.com/bb-cuongnv/react-native-maps#readme"
   s.license      = "MIT"
   s.platform     = :ios, "11.0"
 

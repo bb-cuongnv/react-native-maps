@@ -83,7 +83,7 @@ public class AirMapView extends MapView implements GoogleMap.InfoWindowAdapter,
   private Boolean isMapLoaded = false;
   private Integer loadingBackgroundColor = null;
   private Integer loadingIndicatorColor = null;
-  private final int baseMapPadding = 50;
+  private final int baseMapPadding = 0;
 
   private LatLngBounds boundsToMove;
   private CameraUpdate cameraToSet;
